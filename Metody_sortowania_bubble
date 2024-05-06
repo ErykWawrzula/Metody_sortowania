@@ -1,0 +1,75 @@
+ #include<iostream>
+#include<bits/stdc++.h>
+#include<math.h>
+using namespace std;
+int a[100];
+void losuj()
+{
+	srand(time(NULL));
+	for(int i=1; i<100; i++)
+{
+	a[i]=rand()%10;
+}
+}
+void sortuj()
+{
+	sort(a, a+100);
+}
+void bubble()
+{
+	{
+    for (int i = 0; i < 100 - 1; ++i) {
+        for (int j = 0; j < 100 - i - 1; ++j) {
+            if (a[j] > a[j + 1]) {
+                // Zamiana miejscami
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            	}
+        	}
+    	}
+	}
+}
+void drukuj()
+{
+	for(int i=0; i<100; i++)
+	cout<<a[i]<<" ";
+	cout<<endl;
+}
+void menu()
+{
+	cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+	cout<<                       "Oto program autorstwa E.W 1T\n";
+	cout<<"                      Jesli chcesz losowac wpisz 1\n";
+	cout<<"                      Jesli chcesz sortowac wpisz 2\n";
+	cout<<"                Jesli chcesz sortować bąbelkowo wpisz 3\n";
+	cout<<"                      Jesli chcesz drukowac wpisz 4\n";
+	cout<<"                      Jesli chcesz wyjsc wpisz 5\n";
+	cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+}
+main(){
+while(true)
+{
+	menu();
+	int odp1;
+	cin>>odp1;
+	switch(odp1)
+	{
+		case 1:
+			losuj();
+			break;
+		case 2:
+			sortuj();
+			break;
+		case 3:
+			bubble();
+			break;
+		case 4:
+			drukuj();
+			break;
+		case 5:
+			return 0;
+		}
+	}
+}
+	
